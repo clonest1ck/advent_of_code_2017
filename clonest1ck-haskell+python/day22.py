@@ -56,7 +56,8 @@ def Task2():
                 index = (j-maxindex, maxindex-i)
                 infected[index] = "I"
 
-    for i in range(10000000):
+    i = 0
+    while(i < 10000000):
         if(not infected.has_key(pos) or infected[pos] == "C"):
             if d == (1, 0):
                 d = (0, 1)
@@ -85,6 +86,7 @@ def Task2():
             infected[pos] = "F"
 
         pos = tuple(map(sum, zip(pos, d)))
+        i += 1
     return newly_infected
 
 def mul(l):
